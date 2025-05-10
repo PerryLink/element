@@ -1,0 +1,63 @@
+{
+  "name": "@cordisjs/element",
+  "description": "Element Manipulation",
+  "version": "0.3.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./jsx-runtime": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./jsx-dev-runtime": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "author": "Shigma <shigma10826@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cordiverse/element.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cordiverse/element/issues"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "node --test --import tsx tests/*.spec.ts",
+    "test:text": "shx rm -rf coverage && c8 -r text yarn test",
+    "test:json": "shx rm -rf coverage && c8 -r json yarn test",
+    "test:html": "shx rm -rf coverage && c8 -r html yarn test"
+  },
+  "keywords": [
+    "cordis",
+    "element",
+    "segment",
+    "component",
+    "message",
+    "utilities"
+  ],
+  "devDependencies": {
+    "@types/chai": "^5.2.0",
+    "@types/node": "^22.13.10",
+    "c8": "^10.1.3",
+    "chai": "^5.2.0",
+    "chai-shape": "^1.1.0",
+    "esbuild": "^0.25.1",
+    "shx": "^0.4.0",
+    "tsx": "npm:@cordiverse/tsx@4.19.3-fix.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "cosmokit": "^1.8.0"
+  }
+}
