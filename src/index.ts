@@ -153,7 +153,7 @@ export interface Selector {
   combinator: Combinator
 }
 
-const combRegExp = / *([ >+~]) */g
+const combRegExp = / *([ >+~]) */
 
 export function parseSelector(input: string): Selector[][] {
   return input.split(',').map((query) => {
