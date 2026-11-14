@@ -99,6 +99,10 @@ describe('Element API', () => {
       expect(selectIds('<a id="1"><b id="2"></b><c id="3"></c></a>', 'a>c')).to.deep.equal(['3'])
     })
 
+    test('three compounds', () => {
+      expect(selectIds('<a id="1"><b id="2"><c id="3"></c></b></a>', 'a b c')).to.deep.equal(['3'])
+    })
+
     test('sibling', () => {
       expect(selectIds('<a id="2"></a><b id="3"></b><b id="4"></b>', 'a+b')).to.deep.equal(['3'])
       expect(selectIds('<a id="2"></a><b id="3"></b><b id="4"></b>', 'a~b')).to.deep.equal(['3', '4'])
